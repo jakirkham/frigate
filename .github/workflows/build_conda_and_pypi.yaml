@@ -32,6 +32,7 @@ jobs:
             RAPIDS_CONDA_TOKEN=${{ secrets.CONDA_RAPIDSAI_TOKEN }}
           fi
           anaconda -t "${RAPIDS_CONDA_TOKEN}" upload --skip-existing --no-progress \
+            /tmp/frigate-bld/noarch/*.conda \
             /tmp/frigate-bld/noarch/*.tar.bz2 \
           ;
   wheel-build:
